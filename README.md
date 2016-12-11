@@ -1,2 +1,1 @@
-# 11-12
-Mudando e trocando 
+Falta voltar a troca quando os doces não são iguais
