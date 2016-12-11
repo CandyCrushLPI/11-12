@@ -85,7 +85,7 @@ void trocarItem(int **atual, int **prox){
     *prox = aux;
 }
 
-void fezJogo(int linha, int coluna, int *matriz[SIZE][SIZE])
+void fezJogo(int *matriz[SIZE][SIZE])
 {
     int i, j;
 
@@ -145,7 +145,7 @@ int matrix(){
 
         exibirMatriz(matriz);
         gotoxy(32+(3*x),5+(2*y));
-        fezJogo(x,y,&matriz[x][y]);
+        fezJogo(&matriz);
         aux = getch();
 
         switch(aux){
@@ -155,8 +155,7 @@ int matrix(){
                     if(troca < 0){
                         proximo = &matriz[x][y];
                         trocarItem(atual,proximo);
-                                        fezJogo(x, y, &matriz[x][y]);
-
+                        fezJogo(&matriz);
                         troca *= -1;
                     }
                 }
@@ -167,8 +166,7 @@ int matrix(){
                     if(troca < 0){
                         proximo = &matriz[x][y];
                         trocarItem(atual,proximo);
-                                        fezJogo(x, y, &matriz[x][y]);
-
+                        fezJogo(&matriz);
                         troca *= -1;
                     }
                 }
@@ -179,8 +177,7 @@ int matrix(){
                     if(troca < 0){
                         proximo = &matriz[x][y];
                         trocarItem(atual,proximo);
-                                        fezJogo(x, y, &matriz[x][y]);
-
+                        fezJogo(&matriz);
                         troca *= -1;
                     }
                 }
@@ -191,8 +188,7 @@ int matrix(){
                     if(troca < 0){
                         proximo = &matriz[x][y];
                         trocarItem(atual,proximo);
-                                        fezJogo(x, y, &matriz[x][y]);
-
+                        fezJogo(&matriz);
                         troca *= -1;
                     }
                 }
