@@ -205,17 +205,8 @@ funcao_enter2()
 funcao_enter3()
 {
     system("cls");
-    printf("\n\n\t\t\t             %c%cNAIPE CRUSH%c%c",5,3,6,4);
-    printf("\n\n\n\n\t\t\t   ÚÄÄÄÄÄÄÄÄ    RANKING    ÄÄÄÄÄÄÄÄÄÄ¿\n");
-    printf("\t\t\t   ³                                 ³\n");
-    printf("\t\t\t   ³    %cMelhores pontuadores%c       ³\n",4,4);
-    printf("\t\t\t   ³                                 ³\n");
-    printf("\t\t\t   ³     Player %c1%c:  500.000        ³\n", seta1,seta2);
-    printf("\t\t\t   ³     Player %c2%c:  300.000        ³\n", seta1,seta2);
-    printf("\t\t\t   ³     Player %c3%c:  100.000        ³\n", seta1,seta2);
-    printf("\t\t\t   ³                                 ³\n");
-    printf("\t\t\t   ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ");
-    int ch;
+    mostrar();
+int ch;
     ch=getch();
     if (ch==esc)
         inicio03();
@@ -338,52 +329,53 @@ funcao_enter4b()
 main ()
 {
 
-        char Espada=6,Paus=5,Copas=3,Ouros=4;
-        system("COLOR 07");
-        printf("\n\n\n\n");
-        printf("\t\t%c%c%c      %c%c  %c%c%c%c%c  %c%c %c%c%c%c%c%c  %c%c%c%c%c%c\n",Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada);
-        Sleep(200);
-        system("COLOR 04");
-        printf("\t\t%c%c %c     %c%c %c%c   %c%c %c%c %c%c   %c%c %c%c    \n",Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas);
-        Sleep(200);
-        system("COLOR 07");
-        printf("\t\t%c%c  %c    %c%c %c%c   %c%c %c%c %c%c   %c%c %c%c%c%c  \n",Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus);
-        Sleep(200);
-        system("COLOR 04");
-        printf("\t\t%c%c   %c   %c%c %c%c%c%c%c%c%c %c%c %c%c%c%c%c%c  %c%c    \n",Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros);
-        Sleep(200);
-        system("COLOR 07");
-        printf("\t\t%c%c    %c  %c%c %c%c   %c%c %c%c %c%c      %c%c    \n",Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada);
-        Sleep(200);
-        system("COLOR 04");
-        printf("\t\t%c%c     %c %c%c %c%c   %c%c %c%c %c%c      %c%c%c%c%c%c\n\n\n",Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas);
-        Sleep(200);
-        system("COLOR 07");
-        printf("  ");
-        Sleep(200);
-        system("COLOR 04");
-        printf("\t\t          %c%c%c%c%c  %c%c%c%c%c%c    %c%c   %c%c   %c%c%c%c%c  %c%c  %c%c\n",Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros);
-        Sleep(200);
-        system("COLOR 07");
-        printf("\t\t 	 %c%c      %c%c   %c%c   %c%c   %c%c  %c%c      %c%c  %c%c\n",Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada);
-        Sleep(200);
-        system("COLOR 04");
-        printf("\t\t	 %c%c      %c%c   %c%c   %c%c   %c%c   %c%c%c    %c%c%c%c%c%c\n",Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas);
-        Sleep(200);
-        system("COLOR 07");
-        printf("\t\t         %c%c      %c%c%c%c%c     %c%c   %c%c     %c%c   %c%c  %c%c\n",Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus);
-        Sleep(200);
-        system("COLOR 04");
-        printf("\t\t         %c%c      %c%c   %c%c   %c%c   %c%c      %c%c  %c%c  %c%c\n",Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros);
-        Sleep(200);
-        system("COLOR 07");
-        printf("\t\t          %c%c%c%c%c  %c%c    %c%c  %c%c%c%c%c%c%c  %c%c%c%c%c%c  %c%c  %c%c\n\n\n",Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada);
-        Sleep(1000);
+    char Espada=6,Paus=5,Copas=3,Ouros=4;
+    system("COLOR 07");
+    printf("\n\n\n\n");
+    printf("\t\t%c%c%c      %c%c  %c%c%c%c%c  %c%c %c%c%c%c%c%c  %c%c%c%c%c%c\n",Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada);
+    Sleep(200);
+    system("COLOR 04");
+    printf("\t\t%c%c %c     %c%c %c%c   %c%c %c%c %c%c   %c%c %c%c    \n",Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas);
+    Sleep(200);
+    system("COLOR 07");
+    printf("\t\t%c%c  %c    %c%c %c%c   %c%c %c%c %c%c   %c%c %c%c%c%c  \n",Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus);
+    Sleep(200);
+    system("COLOR 04");
+    printf("\t\t%c%c   %c   %c%c %c%c%c%c%c%c%c %c%c %c%c%c%c%c%c  %c%c    \n",Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros);
+    Sleep(200);
+    system("COLOR 07");
+    printf("\t\t%c%c    %c  %c%c %c%c   %c%c %c%c %c%c      %c%c    \n",Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada);
+    Sleep(200);
+    system("COLOR 04");
+    printf("\t\t%c%c     %c %c%c %c%c   %c%c %c%c %c%c      %c%c%c%c%c%c\n\n\n",Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas);
+    Sleep(200);
+    system("COLOR 07");
+    printf("  ");
+    Sleep(200);
+    system("COLOR 04");
+    printf("\t\t          %c%c%c%c%c  %c%c%c%c%c%c    %c%c   %c%c   %c%c%c%c%c  %c%c  %c%c\n",Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros);
+    Sleep(200);
+    system("COLOR 07");
+    printf("\t\t 	 %c%c      %c%c   %c%c   %c%c   %c%c  %c%c      %c%c  %c%c\n",Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada);
+    Sleep(200);
+    system("COLOR 04");
+    printf("\t\t	 %c%c      %c%c   %c%c   %c%c   %c%c   %c%c%c    %c%c%c%c%c%c\n",Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas,Copas);
+    Sleep(200);
+    system("COLOR 07");
+    printf("\t\t         %c%c      %c%c%c%c%c     %c%c   %c%c     %c%c   %c%c  %c%c\n",Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus,Paus);
+    Sleep(200);
+    system("COLOR 04");
+    printf("\t\t         %c%c      %c%c   %c%c   %c%c   %c%c      %c%c  %c%c  %c%c\n",Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros,Ouros);
+    Sleep(200);
+    system("COLOR 07");
+    printf("\t\t          %c%c%c%c%c  %c%c    %c%c  %c%c%c%c%c%c%c  %c%c%c%c%c%c  %c%c  %c%c\n\n\n",Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada,Espada);
+    Sleep(1000);
 
 
     system("COLOR 07");
 
     inicio1();
+
 
 }
 
