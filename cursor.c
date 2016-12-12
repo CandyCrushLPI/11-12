@@ -13,6 +13,7 @@
 #define direita 77
 #define SIZE 8
 
+int pontuacao=0;
 void mudacor(int i)
 {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), i);
@@ -94,7 +95,7 @@ void trocarItem(int **atual, int **prox){
     *prox = aux;
 }
 
-void fezJogo(int *matriz[SIZE][SIZE])
+void fezJogo(int *matriz[SIZE][SIZE],int *pontuar)
 {
     int i, j;
 
@@ -107,6 +108,7 @@ void fezJogo(int *matriz[SIZE][SIZE])
                 matriz[i][j] = gerarRand();
                 matriz[i+1][j] = gerarRand();
                 matriz[i+2][j] = gerarRand();
+                if(*pontuar == 1)pontuacao+=100;
             }
         }
     }
@@ -119,6 +121,7 @@ void fezJogo(int *matriz[SIZE][SIZE])
                 matriz[i][j] = gerarRand();
                 matriz[i][j+1] = gerarRand();
                 matriz[i][j+2] = gerarRand();
+                if(*pontuar == 1)pontuacao+=100;
             }
         }
     }
@@ -134,18 +137,21 @@ void fezJogo(int *matriz[SIZE][SIZE])
                 matriz[i][j+1] = gerarRand();
                 matriz[i][j+2] = gerarRand();
                 matriz[i][j+3] = gerarRand();
+                if(*pontuar == 1) pontuacao+=100;
             }
         }
     }
 }
 
+
 int matrix(){
     int matriz[SIZE][SIZE];
     int x = 0,y = 0;
     int * atual, *proximo;
-    char aux;
+    char aux, jogadas=15;
     int troca = 1;
-
+    int pontuar = 0;
+    int *pont = 0;
     gerarMatriz(matriz);
 
 
@@ -153,8 +159,10 @@ int matrix(){
     do{
 
         exibirMatriz(matriz);
+        printf("\n\n\t\t\t\tJogadas:%d",jogadas);
+        printf("\tPontuacao:%d",pontuacao);
         gotoxy(32+(3*x),5+(2*y));
-        fezJogo(&matriz);
+        fezJogo(&matriz, &pont);
         aux = getch();
 
         switch(aux){
@@ -164,8 +172,10 @@ int matrix(){
                     if(troca < 0){
                         proximo = &matriz[x][y];
                         trocarItem(atual,proximo);
-                        fezJogo(&matriz);
+                        pont = 1;
+                        fezJogo(&matriz, &pont);
                         troca *= -1;
+                        jogadas--;
                     }
                 }
                 break;
@@ -175,8 +185,10 @@ int matrix(){
                     if(troca < 0){
                         proximo = &matriz[x][y];
                         trocarItem(atual,proximo);
-                        fezJogo(&matriz);
+                        pont = 1;
+                        fezJogo(&matriz, &pont);
                         troca *= -1;
+                        jogadas--;
                     }
                 }
                 break;
@@ -186,8 +198,10 @@ int matrix(){
                     if(troca < 0){
                         proximo = &matriz[x][y];
                         trocarItem(atual,proximo);
-                        fezJogo(&matriz);
+                        pont = 1;
+                        fezJogo(&matriz, &pont);
                         troca *= -1;
+                        jogadas--;
                     }
                 }
                 break;
@@ -197,8 +211,10 @@ int matrix(){
                     if(troca < 0){
                         proximo = &matriz[x][y];
                         trocarItem(atual,proximo);
-                        fezJogo(&matriz);
+                        pont = 1;
+                        fezJogo(&matriz, &pont);
                         troca *= -1;
+                        jogadas--;
                     }
                 }
                 break;
@@ -210,7 +226,7 @@ int matrix(){
                 troca *= -1;
                 break;
         }
-        }while(aux != 0);
+        }while(aux != 0 && jogadas>=0 && aux !=esc && pontuacao<2000);
 
 
 }
