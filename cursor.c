@@ -42,7 +42,7 @@ int gerarRand()
     {
         int num=0;
         num=rand();
-        if(num>=49 && num<=52) return num;
+        if(num>=3 && num<=6) return num;
         else
             return gerarRand();
     }
@@ -98,7 +98,6 @@ void trocarItem(int **atual, int **prox){
 void fezJogo(int *matriz[SIZE][SIZE],int *pontuar)
 {
     int i, j;
-
     for(i=0; i<SIZE; i++)
     {
         for(j=0; j<SIZE; j++)
@@ -111,10 +110,11 @@ void fezJogo(int *matriz[SIZE][SIZE],int *pontuar)
                 matriz[i][j+1] = gerarRand();
                 matriz[i][j+2] = gerarRand();
                 matriz[i][j+3] = gerarRand();
-                if(*pontuar == 1) pontuacao+=400;
+                if(*pontuar == 1) pontuacao+=100;
             }
         }
     }
+
     for(i=0; i<SIZE; i++)
     {
         for(j=0; j<SIZE; j++)
@@ -182,13 +182,11 @@ void ganhou(int *ch){
 
 }
 
-
 int matrix(){
     int matriz[SIZE][SIZE];
     int x = 0,y = 0;
     int * atual, *proximo;
-    char aux;
-    int jogadas=15;
+    char aux, jogadas=15;
     int troca = 1;
     int pontuar = 0;
     int *pont = 0;
@@ -266,9 +264,11 @@ int matrix(){
                 troca *= -1;
                 break;
         }
-        }while(aux != 0 && jogadas>0 && aux !=esc && pontuacao<2000);
+        }while(aux != 0 && jogadas>=0 && aux !=esc && pontuacao<1000);
 
-        if(pontuacao >= 2000){
+        if(pontuacao >= 1000){
            ganhou(&aux);
         }
+
+
 }
