@@ -226,7 +226,7 @@ int matrix(){
                 troca *= -1;
                 break;
         }
-        }while(aux != 0 && jogadas>=0 && aux !=esc && pontuacao<2000);
+        }while(aux != 0 && jogadas>=0 && aux !=esc && pontuacao<1000);
 
 
 }
