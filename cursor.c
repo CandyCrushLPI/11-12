@@ -27,15 +27,24 @@ void gotoxy(x,y)
 
 void exibirMatriz(int v[SIZE][SIZE]){
     int i,j;
-    mudacor(10);
+    mudacor(15);
     for(i=0;i < 8;i++){
         for(j=0;j<8;j++){
 
             gotoxy(32+(3*i),5+(2*j));
-            printf("%i", v[i][j]);
+            printf("%c", v[i][j]);
         }
     }
 }
+
+int gerarRand()
+    {
+        int num=0;
+        num=rand();
+        if(num>=3 && num<=6) return num;
+        else
+            return gerarRand();
+    }
 
 int * posicao(int linha, int coluna, int matriz[SIZE][SIZE]){
     char escolha;
@@ -73,7 +82,7 @@ void gerarMatriz(int matriz[SIZE][SIZE]){
     srand(time(NULL));
     for(i = 0;i < SIZE;i++){
         for(j = 0; j < SIZE; j++){
-            matriz[i][j] = rand() % 6;
+            matriz[i][j] = gerarRand();
         }
     }
 }
@@ -95,9 +104,9 @@ void fezJogo(int *matriz[SIZE][SIZE])
         {
             if((matriz[i][j] == matriz[i+1][j]) && (matriz[i][j] == matriz[i+2][j]) && (matriz[i+1][j]==matriz[i+2][j]))
             {
-                matriz[i][j] = rand()%5;
-                matriz[i+1][j] = rand()%5;
-                matriz[i+2][j] = rand()%5;
+                matriz[i][j] = gerarRand();
+                matriz[i+1][j] = gerarRand();
+                matriz[i+2][j] = gerarRand();
             }
         }
     }
@@ -107,9 +116,9 @@ void fezJogo(int *matriz[SIZE][SIZE])
         {
             if((matriz[i][j] == matriz[i][j+1]) && (matriz[i][j] == matriz[i][j+2]) && (matriz[i][j+1]==matriz[i][j+2]))
             {
-                matriz[i][j] = rand()%5;
-                matriz[i][j+1] = rand()%5;
-                matriz[i][j+2] = rand()%5;
+                matriz[i][j] = gerarRand();
+                matriz[i][j+1] = gerarRand();
+                matriz[i][j+2] = gerarRand();
             }
         }
     }
@@ -121,10 +130,10 @@ void fezJogo(int *matriz[SIZE][SIZE])
                     (matriz[i][j+1]==matriz[i][j+2]) && (matriz[i][j] == matriz[i][j+3]) && matriz[i][j+1]==matriz[i][j+3]
                     && matriz[i][j+2]==matriz[i][j+3])
             {
-                matriz[i][j] = rand()%5;
-                matriz[i][j+1] = rand()%5;
-                matriz[i][j+2] = rand()%5;
-                matriz[i][j+3] = rand()%5;
+                matriz[i][j] = gerarRand();
+                matriz[i][j+1] = gerarRand();
+                matriz[i][j+2] = gerarRand();
+                matriz[i][j+3] = gerarRand();
             }
         }
     }
@@ -196,7 +205,7 @@ int matrix(){
             case enter:
                 atual = &matriz[x][y];
                 mudacor(12);
-                printf("%d", *atual);
+                printf("%c", *atual);
                 aux = getch();
                 troca *= -1;
                 break;
