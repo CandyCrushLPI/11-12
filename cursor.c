@@ -42,7 +42,7 @@ int gerarRand()
     {
         int num=0;
         num=rand();
-        if(num>=3 && num<=6) return num;
+        if(num>=49 && num<=52) return num;
         else
             return gerarRand();
     }
@@ -103,6 +103,22 @@ void fezJogo(int *matriz[SIZE][SIZE],int *pontuar)
     {
         for(j=0; j<SIZE; j++)
         {
+            if((matriz[i][j] == matriz[i][j+1]) && (matriz[i][j] == matriz[i][j+2]) &&
+                    (matriz[i][j+1]==matriz[i][j+2]) && (matriz[i][j] == matriz[i][j+3]) && matriz[i][j+1]==matriz[i][j+3]
+                    && matriz[i][j+2]==matriz[i][j+3])
+            {
+                matriz[i][j] = gerarRand();
+                matriz[i][j+1] = gerarRand();
+                matriz[i][j+2] = gerarRand();
+                matriz[i][j+3] = gerarRand();
+                if(*pontuar == 1) pontuacao+=400;
+            }
+        }
+    }
+    for(i=0; i<SIZE; i++)
+    {
+        for(j=0; j<SIZE; j++)
+        {
             if((matriz[i][j] == matriz[i+1][j]) && (matriz[i][j] == matriz[i+2][j]) && (matriz[i+1][j]==matriz[i+2][j]))
             {
                 matriz[i][j] = gerarRand();
@@ -125,22 +141,45 @@ void fezJogo(int *matriz[SIZE][SIZE],int *pontuar)
             }
         }
     }
-    for(i=0; i<SIZE; i++)
-    {
-        for(j=0; j<SIZE; j++)
-        {
-            if((matriz[i][j] == matriz[i][j+1]) && (matriz[i][j] == matriz[i][j+2]) &&
-                    (matriz[i][j+1]==matriz[i][j+2]) && (matriz[i][j] == matriz[i][j+3]) && matriz[i][j+1]==matriz[i][j+3]
-                    && matriz[i][j+2]==matriz[i][j+3])
-            {
-                matriz[i][j] = gerarRand();
-                matriz[i][j+1] = gerarRand();
-                matriz[i][j+2] = gerarRand();
-                matriz[i][j+3] = gerarRand();
-                if(*pontuar == 1) pontuacao+=100;
-            }
-        }
-    }
+
+}
+
+void ganhou(int *ch){
+    printf("\n\n\n\n\n\n");
+    system("COLOR 04");
+    printf("    **              **                                  **                **                       \n");
+    Sleep(200);
+    system("COLOR 07");
+    printf("      **          **     ****       **         **       **                **  ***  ***         **  \n");
+    printf("        **      **     **    **     **         **       **                **  ***  ****        **  \n");
+    Sleep(200);
+    system("COLOR 04");
+    printf("          **  **     **        **   **         **       **                **  ***  ** **       **  \n");
+    printf("            **      **          **  **         **       **                **  ***  **  **      **  \n");
+    Sleep(200);
+    system("COLOR 07");
+    printf("            **      **          **  **         **       **                **  ***  **   **     **  \n");
+    printf("            **      **          **  **         **       **                **  ***  **    **    **  \n");
+    Sleep(200);
+    system("COLOR 04");
+    printf("            **      **          **  **         **       **       **       **  ***  **     **   **  \n");
+    printf("            **      **          **  **         **        **     ****     **   ***  **      ** ***  \n");
+    Sleep(200);
+    system("COLOR 07");
+    printf("            **       **        **   **         **         **   **  **   **    ***  **       *****  \n");
+    printf("            **         **    **       **     **            ** **    ** **     ***  **        ****  \n");
+    Sleep(200);
+    system("COLOR 04");
+    printf("            **           ****           *****               ***      ***      ***  **         ***  \n");
+    system("COLOR 07");
+    int i;
+    do{
+        system("COLOR 04");
+        Sleep(200);
+        system("COLOR 07");
+        Sleep(200);
+    }while(*ch != esc);
+
 }
 
 
@@ -148,7 +187,8 @@ int matrix(){
     int matriz[SIZE][SIZE];
     int x = 0,y = 0;
     int * atual, *proximo;
-    char aux, jogadas=15;
+    char aux;
+    int jogadas=15;
     int troca = 1;
     int pontuar = 0;
     int *pont = 0;
@@ -226,7 +266,9 @@ int matrix(){
                 troca *= -1;
                 break;
         }
-        }while(aux != 0 && jogadas>=0 && aux !=esc && pontuacao<1000);
+        }while(aux != 0 && jogadas>0 && aux !=esc && pontuacao<2000);
 
-
+        if(pontuacao >= 2000){
+           ganhou(&aux);
+        }
 }
